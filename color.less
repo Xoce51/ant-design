@@ -101,6 +101,8 @@
   };
 
   this.colorEasing = BezierEasing(0.26, 0.09, 0.37, 0.18);
+  // less 3 requires a return
+  return '';
 })()`;
 }
 // It is hacky way to make this function will be compiled preferentially by less
@@ -3173,6 +3175,26 @@ li.ant-calendar-time-picker-select-option-disabled:hover {
 .ant-divider-horizontal.ant-divider-with-text:after {
   border-top: 1px solid #e8e8e8;
 }
+.ant-divider-horizontal.ant-divider-with-text-left {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.85);
+}
+.ant-divider-horizontal.ant-divider-with-text-left:before {
+  border-top: 1px solid #e8e8e8;
+}
+.ant-divider-horizontal.ant-divider-with-text-left:after {
+  border-top: 1px solid #e8e8e8;
+}
+.ant-divider-horizontal.ant-divider-with-text-right {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.85);
+}
+.ant-divider-horizontal.ant-divider-with-text-right:before {
+  border-top: 1px solid #e8e8e8;
+}
+.ant-divider-horizontal.ant-divider-with-text-right:after {
+  border-top: 1px solid #e8e8e8;
+}
 .ant-divider-dashed {
   background: none;
   border-top: 1px dashed #e8e8e8;
@@ -4736,6 +4758,12 @@ form .ant-upload {
 .ant-select-dropdown-menu-item:hover {
   background-color: color(~`colorPalette("@{primary-color}", 1)`);
 }
+.ant-select-dropdown-menu-item:first-child {
+  border-radius: 4px 4px 0 0;
+}
+.ant-select-dropdown-menu-item:last-child {
+  border-radius: 0 0 4px 4px;
+}
 .ant-select-dropdown-menu-item-disabled {
   color: rgba(0, 0, 0, 0.25);
 }
@@ -5033,6 +5061,12 @@ form .ant-upload {
   color: rgba(0, 0, 0, 0.85);
   border-bottom: 1px solid #e8e8e8;
 }
+.ant-table-thead > tr > th:first-child {
+  border-top-left-radius: 4px;
+}
+.ant-table-thead > tr > th:last-child {
+  border-top-right-radius: 4px;
+}
 .ant-table-thead > tr > th[colspan] {
   border-bottom: 0;
 }
@@ -5230,6 +5264,9 @@ tr.ant-table-expanded-row:hover {
 .ant-table-fixed-left table {
   border-radius: 4px 0 0 0;
 }
+.ant-table-fixed-left .ant-table-thead > tr > th:last-child {
+  border-top-right-radius: 0;
+}
 .ant-table-fixed-right {
   box-shadow: -6px 0 6px -4px rgba(0, 0, 0, 0.15);
 }
@@ -5239,6 +5276,9 @@ tr.ant-table-expanded-row:hover {
 }
 .ant-table-fixed-right .ant-table-expanded-row {
   color: transparent;
+}
+.ant-table-fixed-right .ant-table-thead > tr > th:first-child {
+  border-top-left-radius: 0;
 }
 .ant-table.ant-table-scroll-position-left .ant-table-fixed-left {
   box-shadow: none;
